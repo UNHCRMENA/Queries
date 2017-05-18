@@ -1,4 +1,6 @@
 
+--Detect all cases which are created from forms containing more than one PA
+
 Select distinct FormConfigId , FormUUID , B.RationCardID , B.ProcessingGroupNumber from XForm.FormToEntityMappingLog inner join RegionalSearch.SyncSearchRationCard B on (EntityId = B.RationCardGUID )
 where FormUUID in (
 Select FormUUID from XForm.FormToEntityMappingLog where EntityId in 
